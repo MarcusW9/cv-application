@@ -2,47 +2,78 @@
 
 import { useState } from 'react'
 export default function GeneralInfo() {
+  const generalInfoData = {
+    name: '',
+    email: '',
+    phoneNumber: '',
+  }
 
-    const generalInfoData = {
-        name: "",
-        email: "",
-        phoneNumber: ""
-    }
+  const [generalInfo, setGeneralInfo] = useState(generalInfoData)
+  const [isEditing, setIsEditing] = useState(true)
 
-    const [generalInfo, setGeneralInfo] = useState(generalInfoData);
+  function handleChange(e) {
+    setGeneralInfo({ ...generalInfo, [e.target.name]: e.target.value })
+  }
 
-    console.log(generalInfo)
+  function handleClick() {
+    setIsEditing(!isEditing)
+  }
 
-    function handleChange(e) {
-        setGeneralInfo({...generalInfo, [e.target.name] : e.target.value })
-    }
-
+  if (isEditing) {
     return (
-        <section>
-            <label>Name: 
-                <input 
-                type="text"
-                name="name"
-                value={generalInfo.name}
-                onChange={handleChange}
-                />
-            </label>
-            <label>Email: 
-                <input 
-                type="text"
-                name="email"
-                value={generalInfo.email}
-                onChange={handleChange}
-                />
-            </label>
-            <label>Phone Number: 
-                <input 
-                type="text"
-                name="phoneNumber"
-                value={generalInfo.phoneNumber}
-                onChange={handleChange}
-                />
-            </label>
-        </section>
+      <section>
+        <label>
+          Name:
+          <input
+            type="text"
+            name="name"
+            value={generalInfo.name}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Email:
+          <input
+            type="email"
+            name="email"
+            value={generalInfo.email}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Phone Number:
+          <input
+            type="tel"
+            name="phoneNumber"
+            value={generalInfo.phoneNumber}
+            onChange={handleChange}
+          />
+        </label>
+        <button type="button" onClick={handleClick}>
+          Confirm
+        </button>
+      </section>
     )
+  }
+  return (
+    <section>
+      <dl>
+        <div>
+          <dt className="label">Name:</dt>
+          <dd>{generalInfo.name}</dd>
+        </div>
+        <div>
+          <dt className="label">Email:</dt>
+          <dd>{generalInfo.email}</dd>
+        </div>
+        <div>
+          <dt className="label">Phone No.:</dt>
+          <dd>{generalInfo.phoneNumber}</dd>
+        </div>
+      </dl>
+      <button type="button" onClick={handleClick}>
+        Edit
+      </button>
+    </section>
+  )
 }
