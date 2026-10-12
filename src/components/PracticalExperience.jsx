@@ -7,9 +7,22 @@
 import { useState, Fragment } from 'react'
 
 export default function PracticalExperience() {
+  const [experienceIds, setExperienceIds] = useState([
+    { id: crypto.randomUUID() },
+  ])
+
+  function handleAddExperience() {
+    setExperienceIds([...experienceIds, { id: crypto.randomUUID() }])
+  }
+
   return (
     <section>
-      <Experience />
+      {experienceIds.map((experience) => (
+        <Experience key={experience.id} />
+      ))}
+      <button type="button" onClick={handleAddExperience}>
+        Add Experience
+      </button>
     </section>
   )
 }
@@ -36,7 +49,7 @@ function Experience() {
     })
   }
 
-  function handleClick() {
+  function handleToggleEdit() {
     setIsEditing(!isEditing)
   }
 
@@ -104,7 +117,7 @@ function Experience() {
             checked={practicalExperience.isCurrentExperience}
           />
         </label>
-        <button type="button" onClick={handleClick}>
+        <button type="button" onClick={handleToggleEdit}>
           Confirm
         </button>
       </section>
@@ -137,7 +150,7 @@ function Experience() {
         )}
       </dl>
 
-      <button type="button" onClick={handleClick}>
+      <button type="button" onClick={handleToggleEdit}>
         Edit
       </button>
     </section>
