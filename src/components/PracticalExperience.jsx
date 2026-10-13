@@ -11,11 +11,14 @@ export default function PracticalExperience() {
     { id: crypto.randomUUID() },
   ])
 
+  const isLastExperience = experienceIds.length === 1
+
   function handleAddExperience() {
     setExperienceIds([...experienceIds, { id: crypto.randomUUID() }])
   }
 
   function handleDeleteExperience(id) {
+    if (isLastExperience) return
     setExperienceIds(experienceIds.filter((experience) => experience.id !== id))
   }
 
@@ -26,6 +29,7 @@ export default function PracticalExperience() {
           key={experience.id}
           id={experience.id}
           onDelete={handleDeleteExperience}
+          isLastExperience={isLastExperience}
         />
       ))}
       <button type="button" onClick={handleAddExperience}>
@@ -35,7 +39,7 @@ export default function PracticalExperience() {
   )
 }
 
-function Experience({ id, onDelete }) {
+function Experience({ id, onDelete, isLastExperience }) {
   const practicalExperienceData = {
     companyName: '',
     positionTitle: '',
@@ -129,7 +133,11 @@ function Experience({ id, onDelete }) {
           Confirm
         </button>
 
-        <button type="button" onClick={() => onDelete(id)}>
+        <button
+          type="button"
+          disabled={isLastExperience}
+          onClick={() => onDelete(id)}
+        >
           Remove Experience
         </button>
       </section>
