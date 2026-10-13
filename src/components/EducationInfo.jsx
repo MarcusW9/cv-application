@@ -15,7 +15,7 @@ export default function EducationInfo() {
     setEducationInfo({ ...educationInfo, [e.target.name]: e.target.value })
   }
 
-  function handleClick() {
+  function handleToggleEdit() {
     setIsEditing(!isEditing)
   }
 
@@ -58,7 +58,7 @@ export default function EducationInfo() {
             onChange={handleChange}
           />
         </label>
-        <button type="button" onClick={handleClick}>
+        <button type="button" onClick={handleToggleEdit}>
           Confirm
         </button>
       </section>
@@ -84,7 +84,7 @@ export default function EducationInfo() {
           <dd>{educationInfo.dateOfStudyEnd}</dd>
         </div>
       </dl>
-      <button type="button" onClick={handleClick}>
+      <button type="button" onClick={handleToggleEdit}>
         Edit
       </button>
     </section>

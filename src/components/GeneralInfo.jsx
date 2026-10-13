@@ -15,7 +15,7 @@ export default function GeneralInfo() {
     setGeneralInfo({ ...generalInfo, [e.target.name]: e.target.value })
   }
 
-  function handleClick() {
+  function handleToggleEdit() {
     setIsEditing(!isEditing)
   }
 
@@ -49,7 +49,7 @@ export default function GeneralInfo() {
             onChange={handleChange}
           />
         </label>
-        <button type="button" onClick={handleClick}>
+        <button type="button" onClick={handleToggleEdit}>
           Confirm
         </button>
       </section>
@@ -71,7 +71,7 @@ export default function GeneralInfo() {
           <dd>{generalInfo.phoneNumber}</dd>
         </div>
       </dl>
-      <button type="button" onClick={handleClick}>
+      <button type="button" onClick={handleToggleEdit}>
         Edit
       </button>
     </section>
