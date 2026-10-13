@@ -1,3 +1,4 @@
+import '../styles/EducationInfo.css'
 import { useState } from 'react'
 
 export default function EducationInfo() {
@@ -21,7 +22,7 @@ export default function EducationInfo() {
 
   if (isEditing) {
     return (
-      <section>
+      <section className="education-info-edit">
         <label>
           School name:
           <input
@@ -65,7 +66,7 @@ export default function EducationInfo() {
     )
   }
   return (
-    <section>
+    <section className="education-info-view">
       <dl>
         <div>
           <dt>School Name:</dt>

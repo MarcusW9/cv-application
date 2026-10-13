@@ -1,3 +1,4 @@
+import './styles/App.css'
 import GeneralInfo from './components/GeneralInfo'
 import EducationInfo from './components/EducationInfo'
 import PracticalExperience from './components/PracticalExperience'
