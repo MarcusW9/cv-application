@@ -1,0 +1,11 @@
+main {
+  max-width: 50rem;
+  margin-inline: auto;
+  padding: 2rem 1rem;
+  display: grid;
+  gap: 2rem;
+}
+
+h1 {
+  text-align: center;
+}
