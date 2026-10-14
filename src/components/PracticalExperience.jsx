@@ -153,26 +153,36 @@ function Experience({ id, onDelete, isLastExperience }) {
   return (
     <section className="experience">
       <dl>
-        <dt>Company Name:</dt>
-        <dd>{practicalExperience.companyName}</dd>
+        <div>
+          <dt>Company Name:</dt>
+          <dd>{practicalExperience.companyName}</dd>
+        </div>
 
-        <dt>Position Title:</dt>
-        <dd>{practicalExperience.positionTitle}</dd>
+        <div>
+          <dt>Position Title:</dt>
+          <dd>{practicalExperience.positionTitle}</dd>
+        </div>
 
-        <dt>Main Responsibilities:</dt>
-        <dd>{practicalExperience.mainResponsibilities}</dd>
+        <div>
+          <dt>Main Responsibilities:</dt>
+          <dd>{practicalExperience.mainResponsibilities}</dd>
+        </div>
 
         {practicalExperience.isCurrentExperience ? (
-          <Fragment>
+          <div>
             <dt>Start Date:</dt>
             <dd>{practicalExperience.startDate} – Present</dd>
-          </Fragment>
+          </div>
         ) : (
           <Fragment>
-            <dt>Start Date:</dt>
-            <dd>{practicalExperience.startDate}</dd>
-            <dt>End Date:</dt>
-            <dd>{practicalExperience.endDate}</dd>
+            <div>
+              <dt>Start Date:</dt>
+              <dd>{practicalExperience.startDate}</dd>
+            </div>
+            <div>
+              <dt>End Date:</dt>
+              <dd>{practicalExperience.endDate}</dd>
+            </div>
           </Fragment>
         )}
       </dl>

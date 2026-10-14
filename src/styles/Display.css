@@ -1,0 +1,26 @@
+/* Display mode: each term sits above its value, like a small heading */
+dl {
+  display: grid;
+  gap: var(--space-md);
+}
+
+dt {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+dd {
+  margin: 0;
+  /* keep line breaks typed into the responsibilities textarea */
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+/* show a dash when a field was left empty */
+dd:empty::after {
+  content: '—';
+  color: var(--muted);
+}

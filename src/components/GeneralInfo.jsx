@@ -61,15 +61,15 @@ export default function GeneralInfo() {
       <h2>General Information</h2>
       <dl>
         <div>
-          <dt className="label">Name:</dt>
+          <dt>Name:</dt>
           <dd>{generalInfo.name}</dd>
         </div>
         <div>
-          <dt className="label">Email:</dt>
+          <dt>Email:</dt>
           <dd>{generalInfo.email}</dd>
         </div>
         <div>
-          <dt className="label">Phone No.:</dt>
+          <dt>Phone No.:</dt>
           <dd>{generalInfo.phoneNumber}</dd>
         </div>
       </dl>
