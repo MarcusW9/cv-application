@@ -22,6 +22,7 @@ export default function GeneralInfo() {
   if (isEditing) {
     return (
       <section>
+        <h2>General Information</h2>
         <label>
           Name:
           <input
@@ -57,6 +58,7 @@ export default function GeneralInfo() {
   }
   return (
     <section>
+      <h2>General Information</h2>
       <dl>
         <div>
           <dt className="label">Name:</dt>

@@ -1,0 +1,25 @@
+/* Entries inside the Experience card are divided by a line, not nested cards */
+.experience + .experience {
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border);
+}
+
+.experience-dates {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.checkbox-label {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+  font-weight: 400;
+}
+
+/* Dates share the row equally, and stack when it gets too narrow */
+.experience-dates > label {
+  flex: 1 1 12rem;
+}

@@ -1,9 +1,4 @@
-// A section to add practical experience
-// (company name, position title,
-// main responsibilities of your jobs,
-// date from and until when you worked for that
-// company)
-
+import '../styles/PracticalExperience.css'
 import { useState, Fragment } from 'react'
 
 export default function PracticalExperience() {
@@ -24,6 +19,7 @@ export default function PracticalExperience() {
 
   return (
     <section>
+      <h2>Experience</h2>
       {experienceIds.map((experience) => (
         <Experience
           key={experience.id}
@@ -32,7 +28,11 @@ export default function PracticalExperience() {
           isLastExperience={isLastExperience}
         />
       ))}
-      <button type="button" onClick={handleAddExperience}>
+      <button
+        type="button"
+        className="button-secondary"
+        onClick={handleAddExperience}
+      >
         Add Experience
       </button>
     </section>
@@ -74,7 +74,7 @@ function Experience({ id, onDelete, isLastExperience }) {
 
   if (isEditing) {
     return (
-      <section>
+      <section className="experience">
         <label>
           Company Name:
           <input
@@ -101,27 +101,29 @@ function Experience({ id, onDelete, isLastExperience }) {
             onChange={handleChange}
           ></textarea>
         </label>
-        <label>
-          Start Date:
-          <input
-            type="date"
-            name="startDate"
-            value={practicalExperience.startDate}
-            onChange={handleChange}
-          />
-        </label>
-        {!practicalExperience.isCurrentExperience && (
+        <div className="experience-dates">
           <label>
-            End Date:
+            Start Date:
             <input
               type="date"
-              name="endDate"
-              value={practicalExperience.endDate}
+              name="startDate"
+              value={practicalExperience.startDate}
               onChange={handleChange}
             />
           </label>
-        )}
-        <label>
+          {!practicalExperience.isCurrentExperience && (
+            <label>
+              End Date:
+              <input
+                type="date"
+                name="endDate"
+                value={practicalExperience.endDate}
+                onChange={handleChange}
+              />
+            </label>
+          )}
+        </div>
+        <label className="checkbox-label">
           This is my current experience:
           <input
             type="checkbox"
@@ -129,22 +131,25 @@ function Experience({ id, onDelete, isLastExperience }) {
             checked={practicalExperience.isCurrentExperience}
           />
         </label>
-        <button type="button" onClick={handleToggleEdit}>
-          Confirm
-        </button>
+        <div className="button-row">
+          <button type="button" onClick={handleToggleEdit}>
+            Confirm
+          </button>
 
-        <button
-          type="button"
-          disabled={isLastExperience}
-          onClick={() => onDelete(id)}
-        >
-          Remove Experience
-        </button>
+          <button
+            type="button"
+            className="button-danger"
+            disabled={isLastExperience}
+            onClick={() => onDelete(id)}
+          >
+            Remove Experience
+          </button>
+        </div>
       </section>
     )
   }
   return (
-    <section>
+    <section className="experience">
       <dl>
         <dt>Company Name:</dt>
         <dd>{practicalExperience.companyName}</dd>

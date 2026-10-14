@@ -1,4 +1,6 @@
 import './styles/App.css'
+import './styles/Form.css'
+
 import GeneralInfo from './components/GeneralInfo'
 import EducationInfo from './components/EducationInfo'
 import PracticalExperience from './components/PracticalExperience'

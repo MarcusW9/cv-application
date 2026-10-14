@@ -23,6 +23,7 @@ export default function EducationInfo() {
   if (isEditing) {
     return (
       <section className="education-info-edit">
+        <h2>Education</h2>
         <label>
           School name:
           <input
@@ -67,6 +68,7 @@ export default function EducationInfo() {
   }
   return (
     <section className="education-info-view">
+      <h2>Education</h2>
       <dl>
         <div>
           <dt>School Name:</dt>

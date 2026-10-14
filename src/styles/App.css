@@ -1,11 +1,48 @@
+:root {
+  /* light-dark() follows the user's system theme (color-scheme is set in index.css) */
+  --bg: light-dark(#f4f5f7, #15171a);
+  --surface: light-dark(#ffffff, #1e2125);
+  --text: light-dark(#1f2933, #e6e8eb);
+  --muted: light-dark(#616e7c, #9aa5b1);
+  --border: light-dark(#d8dde3, #343a40);
+  --accent: light-dark(#2b6cb0, #63a4e8);
+  --accent-contrast: light-dark(#ffffff, #0b1a2b);
+  --danger: light-dark(#b42318, #f97066);
+
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --radius: 0.5rem;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
 main {
   max-width: 50rem;
   margin-inline: auto;
-  padding: 2rem 1rem;
+  padding: 2rem var(--space-md);
   display: grid;
   gap: 2rem;
 }
 
 h1 {
   text-align: center;
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--accent);
+}
+
+/* Each CV section is a card; sections nested inside a card are not. */
+main > section {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-lg);
 }
