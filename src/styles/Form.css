@@ -46,6 +46,7 @@ button {
   color: var(--accent-contrast);
   font-weight: 600;
   cursor: pointer;
+  min-width: 10rem;
 }
 
 button:hover:not(:disabled) {
