@@ -4,6 +4,12 @@
   border-top: 1px solid var(--border);
 }
 
+.experience-period {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .experience-dates {
   display: flex;
   flex-direction: row;

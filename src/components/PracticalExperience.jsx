@@ -101,36 +101,38 @@ function Experience({ id, onDelete, isLastExperience }) {
             onChange={handleChange}
           ></textarea>
         </label>
-        <div className="experience-dates">
-          <label>
-            Start Date:
-            <input
-              type="date"
-              name="startDate"
-              value={practicalExperience.startDate}
-              onChange={handleChange}
-            />
-          </label>
-          {!practicalExperience.isCurrentExperience && (
+        <div className="experience-period">
+          <div className="experience-dates">
             <label>
-              End Date:
+              Start Date:
               <input
                 type="date"
-                name="endDate"
-                value={practicalExperience.endDate}
+                name="startDate"
+                value={practicalExperience.startDate}
                 onChange={handleChange}
               />
             </label>
-          )}
+            {!practicalExperience.isCurrentExperience && (
+              <label>
+                End Date:
+                <input
+                  type="date"
+                  name="endDate"
+                  value={practicalExperience.endDate}
+                  onChange={handleChange}
+                />
+              </label>
+            )}
+          </div>
+          <label className="checkbox-label">
+            This is my current experience:
+            <input
+              type="checkbox"
+              onChange={handleCurrentExperience}
+              checked={practicalExperience.isCurrentExperience}
+            />
+          </label>
         </div>
-        <label className="checkbox-label">
-          This is my current experience:
-          <input
-            type="checkbox"
-            onChange={handleCurrentExperience}
-            checked={practicalExperience.isCurrentExperience}
-          />
-        </label>
         <div className="button-row">
           <button type="button" onClick={handleToggleEdit}>
             Confirm
