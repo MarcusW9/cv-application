@@ -34,7 +34,7 @@ function App() {
         </label>
         <label htmlFor="dark-mode">🌙 Dark mode</label>
       </div>
-      <h1>CV Template</h1>
+      <h1>CV Builder</h1>
       <GeneralInfo />
       <EducationInfo />
       <PracticalExperience />
