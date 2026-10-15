@@ -65,8 +65,9 @@ button:disabled {
 
 .button-danger {
   background-color: transparent;
-  border-color: var(--danger);
+  border: none;
   color: var(--danger);
+  margin-left: auto;
 }
 
 .button-row {
