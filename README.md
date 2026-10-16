@@ -2,6 +2,8 @@
 
 A small React app for filling in a CV. It is my solution to the [CV Application project](https://www.theodinproject.com/lessons/node-path-react-new-cv-application) in The Odin Project's React course.
 
+**Live demo:** https://marcusw9.github.io/cv-application/
+
 ## Features
 
 - **Three sections:** general information (name, email, phone), education (school, title of study, dates) and practical experience (company, position, responsibilities, dates).
@@ -21,12 +23,13 @@ pnpm dev
 | Command        | Description                          |
 | -------------- | ------------------------------------ |
 | `pnpm dev`     | Start the dev server with hot reload |
+| `pnpm test`    | Run tests in watch mode              |
 | `pnpm build`   | Build for production into `dist/`    |
 | `pnpm preview` | Serve the production build locally   |
 | `pnpm lint`    | Lint with oxlint                     |
 | `pnpm format`  | Format all files with Prettier       |
 
-Built with [React](https://react.dev/) and [Vite](https://vite.dev/), using [pnpm](https://pnpm.io/), [oxlint](https://oxc.rs/docs/guide/usage/linter) and [Prettier](https://prettier.io/).
+Built with [React](https://react.dev/) and [Vite](https://vite.dev/), using [pnpm](https://pnpm.io/), [Vitest](https://vitest.dev/) with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/), [oxlint](https://oxc.rs/docs/guide/usage/linter) and [Prettier](https://prettier.io/).
 
 ## Project structure
 
@@ -72,4 +75,4 @@ src/
 - Allow several education entries, like experience.
 - A live CV preview and a print or PDF view, which needs the state lifted into `App`.
 - Save the data in `localStorage` so a refresh doesn't lose it.
-- Tests with Vitest and React Testing Library.
+- More tests. There is one so far, for the Remove button; the edit and confirm flow is a good next one.
