@@ -2,7 +2,9 @@
 
 A small React app for filling in a CV. It is my solution to the [CV Application project](https://www.theodinproject.com/lessons/node-path-react-new-cv-application) in The Odin Project's React course.
 
-**Live demo:** https://marcusw9.github.io/cv-application/
+**Live demo:**
+- GitHub Pages: https://marcusw9.github.io/cv-application/
+- Netlify: https://endearing-hotteok-bbfd0d.netlify.app/
 
 ## Features
 
