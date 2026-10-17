@@ -80,11 +80,11 @@ export default function EducationInfo() {
         </div>
         <div>
           <dt>Start date:</dt>
-          <dd>{educationInfo.dateOfStudyStart}</dd>
+          <dd>{educationInfo?.dateOfStudyStart ? new Date(educationInfo.dateOfStudyStart).toLocaleDateString('en-gb') : 'N/A'}</dd>
         </div>
         <div>
           <dt>End date:</dt>
-          <dd>{educationInfo.dateOfStudyEnd}</dd>
+          <dd>{educationInfo?.dateOfStudyEnd ? new Date(educationInfo?.dateOfStudyEnd).toLocaleDateString('en-gb') : 'N/A'}</dd>
         </div>
       </dl>
       <button type="button" onClick={handleToggleEdit}>
